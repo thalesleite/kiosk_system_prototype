@@ -106,7 +106,6 @@ sides.append(Side("Fries", "", 5.9, Size.BIG, True))
 sides.append(Side("Salad", "", 2.9, Size.MEDIUM, False))
 sides.append(Side("Salad", "", 3.9, Size.BIG, False))
 
-
 print("Welcome to the Prototype Kiosk System!")
 
 print("First, choose: (1)'Eat in' or (2)'Take out'.")
