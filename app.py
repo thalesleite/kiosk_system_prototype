@@ -2,11 +2,13 @@ from enum import Enum
 import random
 import time
 
+# type enum for the kind of sizes
 class Size(Enum):
     SMALL = 1
     MEDIUM = 2
     BIG = 3
 
+# class Food where all the others food(burger, drink, sides) are inherited
 class Food:
     def __init__(self, name, description, price, size: Size, discount):
         self._name = name
@@ -39,43 +41,52 @@ class Food:
     def getSize(self):
         return self._size.name
 
+# class Burger
 class Burger(Food):
     def __init__(self, name, description, price, size: Size, discount):
         super().__init__(name, description, price, size, discount)
 
+    # burgers get 10% of discount
     def getPrice(self):
         if self._discount :
             return round(self._price - (self._price / 10), 2)
         return self._price
 
+# class Drink
 class Drink(Food):
     def __init__(self, name, description, price, size: Size, discount):
         super().__init__(name, description, price, size, discount)
 
+    # drinks get 8% of discount
     def getPrice(self):
         if self._discount:
             return round(self._price - (self._price / 8), 2)
         return self._price
 
+# class Side
 class Side(Food):
     def __init__(self, name, description, price, size: Size, discount):
         super().__init__(name, description, price, size, discount)
     
+    # sides get 5% of discount
     def getPrice(self):
         if self._discount:
             return round(self._price - (self._price / 5), 2)
         return self._price
 
+# class Order
 class Order:
     def __init__(self, burger: Burger, drink: Drink, side: Side):
         self._burger = burger
         self._drink = drink
         self._side = side
 
+    # the sum of total to pay
     def totalPrice(self):
         total = self._burger.getPrice() + self._drink.getPrice() + self._side.getPrice()
         return total
 
+    # return a random(just for the prototype) number for the table
     def getTableNumber(self):
         return random.randint(1, 50)
 
