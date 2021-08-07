@@ -90,12 +90,14 @@ class Order:
     def getTableNumber(self):
         return random.randint(1, 50)
 
+    # return the order with the chosen ones
     def getOrder(self):
         print(f"{self._burger.getName()}|{self._burger.getSize()} - €{self._burger.getPrice()}")
         print(f"{self._drink.getName()}|{self._drink.getSize()} - €{self._drink.getPrice()}")
         print(f"{self._side.getName()}|{self._side.getSize()} - €{self._side.getPrice()}")
         print(f"Total: {self.totalPrice()}")
 
+# list of burgers
 burgers = [] 
 burgers.append(Burger("Beef Burger", "", 5.9, Size.MEDIUM, True))
 burgers.append(Burger("Beef Burger", "", 7.9, Size.BIG, True))
@@ -103,6 +105,7 @@ burgers.append(Burger("Chicken Burger", "", 3.9, Size.MEDIUM, True))
 burgers.append(Burger("Chicken Burger", "", 6.9, Size.BIG, False))
 burgers.append(Burger("Veggie Burger", "", 8.9, Size.SMALL, False))
 
+# list of drinks
 drinks = [] 
 drinks.append(Drink("Coca", "", 2.5, Size.SMALL, False))
 drinks.append(Drink("Coca", "", 3.5, Size.MEDIUM, False))
@@ -110,6 +113,7 @@ drinks.append(Drink("7up", "", 2.0, Size.SMALL, False))
 drinks.append(Drink("7up", "", 2.5, Size.MEDIUM, True))
 drinks.append(Drink("Orange Juice", "", 2.5, Size.MEDIUM, True))
 
+# list of sides
 sides = []
 sides.append(Side("Fries", "", 3.9, Size.SMALL, False))
 sides.append(Side("Fries", "", 4.9, Size.MEDIUM, False))
@@ -117,6 +121,7 @@ sides.append(Side("Fries", "", 5.9, Size.BIG, True))
 sides.append(Side("Salad", "", 2.9, Size.MEDIUM, False))
 sides.append(Side("Salad", "", 3.9, Size.BIG, False))
 
+# beginning of the program
 print("Welcome to the Prototype Kiosk System!")
 
 print("First, choose: (1)'Eat in' or (2)'Take out'.")
